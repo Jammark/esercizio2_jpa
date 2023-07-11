@@ -54,4 +54,8 @@ public class EventoDAO {
 		em.refresh(ev);
 	}
 
+	public void close() {
+		this.em.close();
+	}
+
 }

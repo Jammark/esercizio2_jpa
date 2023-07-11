@@ -9,7 +9,7 @@ public class JpaUtil {
 
 	static {
 		try {
-			entityManagerFactory = Persistence.createEntityManagerFactory("simplejpa");
+			entityManagerFactory = Persistence.createEntityManagerFactory("simplejpa1");
 		} catch (Throwable ex) {
 			System.err.println("Initial EntityManagerFactory creation failed." + ex);
 			throw new ExceptionInInitializerError(ex);
@@ -18,6 +18,10 @@ public class JpaUtil {
 
 	public static EntityManagerFactory getEntityManagerFactory() {
 		return entityManagerFactory;
+	}
+
+	public static void close() {
+		entityManagerFactory.close();
 	}
 
 }
